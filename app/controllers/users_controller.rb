@@ -1,8 +1,10 @@
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 # ここより下の各アクションを追加しましょう
   def new 
+    @user = User.new
   end
  
   def create
