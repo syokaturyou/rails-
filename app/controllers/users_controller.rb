@@ -10,12 +10,13 @@ class UsersController < ApplicationController
  
   def create
     @user = User.new(params.require(:user).permit(:name, :email, :age, :introduction))
-    #以下のsaveメソッドで保存がされません
+    # binding.pry
     if @user.save
+    # binding.pry
       flash[:notice] = "ユーザーを新規登録しました"
       redirect_to :users
     else
-      #こちらの処理が実行されます。
+      # binding.pry
       render "new"
     end
   end
